@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/CSS/style.css">
+      <script type="text/javascript" src="/static/js/d3/d3.js"></script>
+      <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+    <title>数据展示</title>
+
+  </head>
+  <body>
+   <img src = "/static/CSS/images/school.png" width="10%">
+  {% block body %}
+
+<div class="row">
+  <h2><i>情感特点</i></h2>
+
+  <div class="column_home" id="left-col" align="center">
+    <div>
+    <div class="legend1">
+    <div class="legend1"> <p class="country-name"><span class="key-dot you"></span>你的性格</p > </div>
+    </div>
+      <div id="histo"></div>
+    </div>
+  </div>
+
+  <div class="column_home" id="left-col" align="center">
+      <br>
+      <p>你最可能的情感是 : </p >
+        <br>
+        <h4> {{trait}} </h4>
+        <br>
+        <div class="parent">
+          <p>情感特征 : </p >
+            <ul align="left">
+            <li>外向的 : {{traits[0]}}%</li>
+            <li>神经质的 : {{traits[1]}}%</li>
+            <li>随和的 : {{traits[2]}}%</li>
+            <li>负责任的 : {{traits[3]}}%</li>
+            <li>开放性的 : {{traits[4]}}%</li>
+          </ul>
+      </div>
+      <br>
+    <br>
+  </div>
+
+  <div class="column_home" id="left-col" align="center">
+    <div class="parent">
+        <p>最常见的单词 : </p >
+          <ul align="left">
+             {% for el in common_words %}
+                <li>{{el}}</li>
+              {% endfor %}
+          </ul>
+      </div>
+  </div>
+</div>
+
+  <hr width="50%" style="margin-left: 25%; margin-right:25%">
+
+      <br>
+      <br>
+
+<script type="text/javascript" src="/static/js/hist_txt_perso.js"></script>
+<script type="text/javascript" src="/static/js/hist_txt_glob.js"></script>
+    <a href="https://github.com/hfldqwe/TextEmotionRecognition">github地址</a>
+    <div id="footer">CopyRight@copy2023 韩帅 董盛 许建飞 </div>
+  {% endblock %}
+
+</body>
+</html>

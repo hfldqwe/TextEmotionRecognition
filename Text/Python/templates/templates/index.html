@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>面向对话的多模态情感识别n</title>
+  </head>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+  <body>
+    {% block body %}
+      <form method="POST" action="/text">
+   <input type="text" id="text" name="text" required
+       minlength="1" maxlength="12000" size="500" href="/static/style.css"><br>
+   <input type="submit" value="开始分析" href="/static/style.css">
+  </form>
+    {% endblock %}
+  <div id="footer">CopyRight@copy2023 韩帅 董盛 许建飞 </div>
+  <a class="git-link" href="https://gitee.com/han_shuai123"></a>
+  </body>
+</html>
+
